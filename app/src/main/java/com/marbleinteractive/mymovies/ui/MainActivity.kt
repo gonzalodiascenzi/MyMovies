@@ -1,17 +1,14 @@
-package com.marbleinteractive.mymovies
+package com.marbleinteractive.mymovies.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import com.marbleinteractive.mymovies.R
 import com.marbleinteractive.mymovies.databinding.ActivityMainBinding
 import com.marbleinteractive.mymovies.model.Movie
 import com.marbleinteractive.mymovies.model.MovieDbClient
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

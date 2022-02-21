@@ -1,4 +1,4 @@
-package com.marbleinteractive.mymovies
+package com.marbleinteractive.mymovies.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

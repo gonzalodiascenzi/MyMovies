@@ -1,4 +1,4 @@
-package com.marbleinteractive.mymovies
+package com.marbleinteractive.mymovies.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
