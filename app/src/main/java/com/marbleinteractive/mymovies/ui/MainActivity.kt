@@ -1,8 +1,11 @@
 package com.marbleinteractive.mymovies.ui
 
+import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.marbleinteractive.mymovies.R
 import com.marbleinteractive.mymovies.databinding.ActivityMainBinding
@@ -11,6 +14,13 @@ import com.marbleinteractive.mymovies.model.MovieDbClient
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+
+    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()){
+        isGranted ->
+        val message = if(isGranted) "Permission Granted" else "Permission Rejected"
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -24,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         }
 
        binding.recycler.adapter = moviesAdapter
+
+        requestPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
 
         lifecycleScope.launch { //UTILIZAMOS RETROFIT CON CORRUTINAS PARA RECUPERAR LOS DATOS DE LA API
             val apiKey = getString(R.string.api_key)

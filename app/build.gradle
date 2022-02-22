@@ -50,6 +50,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     //CORRUTINAS
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
+    //Activity and Fragment KTX: Para usar permisos de localizacion
+    implementation "androidx.activity:activity-ktx:1.4.0"
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
 
 
 }
