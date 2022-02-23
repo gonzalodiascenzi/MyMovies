@@ -44,6 +44,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     //GLIDE
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     //RETROFIT
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -53,6 +54,8 @@ dependencies {
     //Activity and Fragment KTX: Para usar permisos de localizacion
     implementation "androidx.activity:activity-ktx:1.4.0"
     implementation "androidx.fragment:fragment-ktx:1.4.1"
+    //PlayServices
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
 
 
 }

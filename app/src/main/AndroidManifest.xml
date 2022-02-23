@@ -25,7 +25,7 @@
 
         <activity
             android:name=".ui.DetailActivity"
-            android:exported="false"
+            android:theme="@style/Theme.MyMovies.NoActionBar"
             android:parentActivityName=".ui.MainActivity" />
 
     </application>
