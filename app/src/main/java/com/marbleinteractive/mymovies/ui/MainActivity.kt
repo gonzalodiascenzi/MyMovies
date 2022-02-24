@@ -25,22 +25,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val moviesAdapter = MoviesAdapter(emptyList()){ movie -> navigateTo(movie)
-        /*Toast
-            .makeText(this@MainActivity, movie.title, Toast.LENGTH_SHORT)
-            .show()*/
     }
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
-    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()){isGranted ->
+    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()){ isGranted ->
        requestPopularMovies(isGranted)
-        /*isGranted ->
-        val message = when {
-            isGranted -> "Permission Granted"
-            shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION) -> "Should show Ratio"
-            else -> "Permission Rejected"
-        }
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()*/
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
